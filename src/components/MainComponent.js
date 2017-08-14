@@ -18,7 +18,7 @@ export default class MainComponent extends React.Component{
       this.state = {
           page: 'Home',
           menuopen: false,
-          pages: ['Home', 'Development', 'Music']
+          pages: ['Home', 'Web Development', 'Apps', 'Music']
       };
       this.muiTheme = getMuiTheme({
           palette: {
@@ -48,6 +48,7 @@ export default class MainComponent extends React.Component{
                         />
                         <PageContents 
                             page={this.state.page}
+                            changePage={this.changePageContents}
                         />
                     </div>
                 </MuiThemeProvider>

@@ -16,7 +16,6 @@ export default class ProfileCard extends React.Component {
     
     render() {
         return(
-            <div className="contentWrapper">
             <Paper
             zDepth={3}
             >
@@ -29,7 +28,7 @@ export default class ProfileCard extends React.Component {
                     <CardMedia
                         overlay={
                             <CardHeader 
-                            title="Skills and Experience" 
+                            title="Skills" 
                             subtitle="James Guest" 
                             avatar="images/profile3.png"
                             titleColor="#49004e"
@@ -46,15 +45,8 @@ export default class ProfileCard extends React.Component {
                             <SkillsChips />
                         }
                      />
-                    <CardTitle  title="Education and Experience" />
-                    <CardText 
-                        children={
-                            <ExperienceStepper />
-                        }
-                    />
                 </Card>
                 </Paper>
-            </div>
         );
     }
 }

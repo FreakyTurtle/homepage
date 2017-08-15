@@ -18,7 +18,13 @@ export default class MainComponent extends React.Component{
       this.state = {
           page: 'Home',
           menuopen: false,
-          pages: ['Home', 'Web Development', 'Apps', 'Music']
+          pages: [
+              {name:'Home', href:"home"}, 
+              {name:'Experience', href:'experience'}, 
+              {name:'Development Skills', href: 'dev'}, 
+              {name: 'Apps', href:'apps'},
+              {name: 'Music', href:'music'}
+          ]
       };
       this.muiTheme = getMuiTheme({
           palette: {

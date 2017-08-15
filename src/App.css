@@ -1,7 +1,49 @@
 .App {
   /*text-align: center;*/
+  font-family: 'Raleway', sans-serif;
+  color: #4DB6AC; /* teal300 */
 }
-
+*{
+    font-family: 'Raleway', sans-serif;
+    color: #4DB6AC; /* teal300 */
+}
+a, a:visited, a:active{
+    text-decoration: none !important;
+    font-family: 'Raleway', sans-serif;
+    color: #4DB6AC; /* teal300 */
+    transition: color 0.5s;
+}
+a:hover{
+    text-decoration: none;
+    color: #E0E0E0;
+    cursor: pointer;
+}
+.home-menu > a{
+    color: #ffffff;
+}
+.home-menu> a:hover{
+    color: #4DB6AC;
+}
+.button-link{
+    display: block;
+    color: #49004e;
+}
+.button-link:hover{
+    color: #4DB6AC;
+}
+.sidemenu-links:hover{
+    display: block;
+    color: #49004e;
+}
+.sidemenu-links{
+    display: block;
+}
+.titleText{
+    font-family: 'Lobster', cursive;
+}
+.home-menu{
+    font-size: 22px;
+}
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
@@ -19,11 +61,14 @@
 }
 
 .HomeBanner{
-    padding-top: 20%;
+    padding-top: 35%;
     text-align: center;
 }
+.homeCard{
+    height: 220px;
+}
 .FTWelcome{
-    max-width: 75%;
+    max-width: 100%;
 }
 .chipcontainer{
     text-align: center;
@@ -39,6 +84,32 @@
 .contentWrapper{
     margin: 15px 15px;
 }
+.home-row{
+    max-width: 66%;
+    margin: 0 auto;
+}
+.section-title{
+    color: #E0E0E0;
+    opacity: 0.5;
+    font-size: 5em;
+    font-family: 'Lobster', cursive;
+    letter-spacing: 3px;
+    margin: 0 auto;
+    padding: 3px;
+    display: block;
+}
+.section{
+    min-height: 100%;
+    padding-bottom: 10%;
+    position: relative;
+}
+.section.inverse{
+    background: #ffffff;
+}
+.section.regular{
+    
+}
+
 @media only screen and (min-width: 600px) {
     /* Tablets */
     
@@ -46,6 +117,14 @@
         max-width: 520px;
         margin: 30px auto;
     }
+    .section-title{
+        font-size: 5em;
+    }
+}
+
+.row-no-padding >[class*="col-"] {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
 }
 
 @media only screen and (min-width: 768px) {
@@ -53,5 +132,12 @@
     .contentWrapper{
         max-width: 720px;
         margin: 40px auto;
+    }
+    .home-row{
+        max-width: 66%;
+        margin: 0 auto;
+    }
+    .section-title{
+        font-size: 7em;
     }
 }

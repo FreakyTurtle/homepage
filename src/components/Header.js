@@ -22,9 +22,8 @@ export default class Header extends React.Component {
     }
     
     returnMenuItems = (pg, i) => {
-        console.log("pg"+i+": ", pg);
         return (
-            <MenuItem key={i} onTouchTap={() => this.menuItemClick(i)}>{pg}</MenuItem>
+            <MenuItem key={i}><a className="sidemenu-links" onClick={this.handleToggle} href={"#" + pg.href}>{pg.name}</a></MenuItem>
         );
     }
       

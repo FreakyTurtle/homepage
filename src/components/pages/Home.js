@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
-import Chip from 'material-ui/Chip';
-import Avatar from 'material-ui/Avatar';
-import FontIcon from 'material-ui/FontIcon';
-import {grey50, grey500, teal300} from 'material-ui/styles/colors';
-import Dialog from 'material-ui/Dialog';
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 import Paper from 'material-ui/Paper';
 
@@ -11,10 +7,29 @@ export default class Home extends React.Component {
     
     constructor(props) {
       super(props);
+      this.pages = [
+          {name: 'Apps', image: 'apps.jpg', col: 4, navkey:2},
+          {name: 'Web Development', image: 'webdev.jpg', col: 4, navkey:1},
+          {name: 'Music', image: 'music.jpg', col: 4, navkey:3}
+      ];
     }
     
     pageChange = (page) => {
         this.props.changePage(page);
+    }
+    
+    renderTile = (pg, i) => {
+        return (
+            <div className={"col-sm-" + pg.col}>
+            <Card >
+                <CardMedia
+                    overlay={<CardTitle title={pg.name}/>}
+                >
+                    <img style={{height: 200}} src={"images/" + pg.image} />
+                </CardMedia>
+            </Card>
+            </div>
+        );
     }
     
     
@@ -29,11 +44,11 @@ export default class Home extends React.Component {
       return (
         <div className="HomeBanner">
           <img className="FTWelcome" src="images/FTwelcomeWHITE.png"></img>
-          <p>
-              <span onClick={() => this.pageChange(0)}>Music</span> - 
-              <span onClick={() => this.pageChange(2)}>Apps</span> - 
-              <span onClick={() => this.pageChange(1)}>Development</span>
-          </p>
+          <div className="home-menu">
+            <a href="#experience">Experience</a> - <a href="#dev">Development Skills</a> - <a href="#apps">Apps</a> - <a href="#music">Music</a>
+          </div>
+          <br/>
+          <p>This site was made using <a href="https://facebook.github.io/react/" target="_blank">React.js</a>, <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a> and <a href="http://www.material-ui.com/#/" target="_blank">Material-UI</a>.</p>
         </div>
       );
     }

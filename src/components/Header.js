@@ -33,6 +33,7 @@ export default class Header extends React.Component {
                 title="Freaky Turtle"
                 iconClassNameRight="fa fa-github"
                 onLeftIconButtonTouchTap={this.handleToggle}
+                onRightIconButtonTouchTap={() => {window.open('https://github.com/FreakyTurtle/homepage', '_blank')}}
                 style={{fontFamily: 'Lobster, cursive', textAlign: 'center', letterSpacing: '1px', color: '#49004e'}}
             >
             <Drawer

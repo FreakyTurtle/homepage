@@ -4,6 +4,7 @@ import Development from './pages/Development';
 import Section from './Section';
 import ExperienceStepper from './ExperienceStepper';
 import Apps from './pages/Apps';
+import Music from './pages/Music';
 
 export default class PageContents extends React.Component {
 
@@ -63,6 +64,12 @@ export default class PageContents extends React.Component {
              theme="inverse"
              title="Apps"
              children={<div><Apps /></div>}
+          />
+          <a name="music"></a>
+         <Section
+             theme="regular"
+             title="Music"
+             children={<div><Music /></div>}
           />
       </div>
     );

@@ -59,9 +59,11 @@ a:hover{
 .App-intro {
   font-size: large;
 }
-
+iframe{
+    border: none;
+}
 .HomeBanner{
-    padding-top: 35%;
+    padding-top: 30%;
     text-align: center;
 }
 .homeCard{

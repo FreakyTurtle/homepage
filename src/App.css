@@ -63,7 +63,7 @@ iframe{
     border: none;
 }
 .HomeBanner{
-    padding-top: 30%;
+    padding-top: 45%;
     text-align: center;
 }
 .homeCard{
@@ -122,6 +122,10 @@ iframe{
     .section-title{
         font-size: 5em;
     }
+    .HomeBanner{
+        padding-top: 35%;
+        text-align: center;
+    }
 }
 
 .row-no-padding >[class*="col-"] {
@@ -141,5 +145,9 @@ iframe{
     }
     .section-title{
         font-size: 7em;
+    }
+    .HomeBanner{
+        padding-top: 30%;
+        text-align: center;
     }
 }

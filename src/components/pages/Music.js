@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import {GridList, GridTile} from 'material-ui/GridList';
+import {grey50, grey500, teal300, teal600} from 'material-ui/styles/colors';
+import Chip from 'material-ui/Chip';
+import Paper from 'material-ui/Paper';
 
 export default class Music extends React.Component {
     
@@ -14,23 +17,32 @@ export default class Music extends React.Component {
           {title:"Amen", by:"James Guest", embed:"https://www.youtube.com/embed/EwvS5iUUxJo?rel=0"},
           {title:"Heartless", by:"James Guest featuring Archit3kt", embed:"https://www.youtube.com/embed/cZPP6a0ixBw?rel=0", featured:true},
           {title:"Can't Lose Me", by:"James Guest", embed:"https://www.youtube.com/embed/U5aOiLJ65jQ?rel=0"},
-          {title:"Burn This Fucker Down", by:"James Guest", embed:"https://www.youtube.com/embed/h_MsZdp099U?rel=0"},
+          {title:"Burn This F***er Down", by:"James Guest", embed:"https://www.youtube.com/embed/h_MsZdp099U?rel=0"},
           
       ];
       this.styles = {
-          root: {
+          chip: {
+            margin: 4,
+            display: 'inline-block'
+          },
+          wrapper: {
             display: 'flex',
             flexWrap: 'wrap',
-            justifyContent: 'space-around',
-          },
-          gridList: {
-            width: 560,
-            overflowY: 'auto',
           },
       };
+      this.state = {
+          selected: 1,
+      };
+      this.songChips = this.songChips.bind(this);
     }
     
     renderSongs = (song, i) => {
+        
+        return (<div className={song.featured ? "col-sm-6" : "col-sm-6"}>
+        <iframe width={song.featured ? '560' : '560'} height={song.featured ? "315" : "315"} src={song.embed} frameborder="0" allowfullscreen></iframe>
+        </div>);
+        
+        
         return (
             <GridTile
               key={i}
@@ -39,22 +51,64 @@ export default class Music extends React.Component {
               cols={song.featured ? 2 : 1}
               rows={song.featured ? 2 : 1}
             >
-            <iframe width={song.featured ? "560" : "280"} height={song.featured ? "315" : "157.5"} src={song.embed} frameborder="0" allowfullscreen></iframe>
+            <div style={{position: 'relative',
+                    	paddingBottom: '56.25%',// /* 16:9 */
+                    	paddingTop: '25px',
+                    	height: 0
+                    }}>
+            <iframe width={song.featured ? (2*this.state.standard_width) : this.state.standard_width} height={song.featured ? "315" : "157.5"} src={song.embed} frameborder="0" allowfullscreen></iframe>
+            </div>
             </GridTile>
         );
     }
     
+    songChips = (song, i ) => {
+        return (
+            <Chip
+                onTouchTap={() => {
+                    this.setState({selected: i});
+                }}
+                style={this.styles.chip}
+                backgroundColor={i === this.state.selected ? teal600 : teal300}
+                labelColor={grey50}
+                key={i}
+            >
+              {song.title}
+            </Chip>
+        );
+    }
+    
     render() {
-        return(
-            <div style={this.styles.root}>
-                <GridList
-                  cols={2}
-                  cellHeight="auto"
-                  padding={1}
-                  style={this.styles.gridList}
+        
+        return (
+            <div style={{textAlign:'center'}}>
+                {this.songs.map(this.songChips)}
+                <Paper
+                    style={{
+                    position: 'relative',
+                	paddingBottom: '56.25%',
+                	paddingTop: '25px',
+                	height: 0
+                    }}
+                    zDepth={3}
                 >
+                <iframe
+                style={{position: 'absolute',
+                	top: '0',
+                	left: '0',
+                	width: '100%',
+                	height: '100%'
+                }}
+                 width="580" height="315" src={this.songs[this.state.selected].embed} frameborder="0" allowfullscreen></iframe>
+                </Paper>
+            </div>
+        );
+        
+        return(
+            <div >
+                <div className="row">
                 {this.songs.map(this.renderSongs)}
-                </GridList>
+                </div>
             </div>
                 
         );

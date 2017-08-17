@@ -44,6 +44,7 @@ export default class Home extends React.Component {
       return (
         <div className="HomeBanner">
           <img className="FTWelcome" src="images/FTwelcomeWHITE.png"></img>
+          <hr />
           <div className="home-menu">
             <a href="#experience">Experience</a> - <a href="#dev">Development Skills</a> - <a href="#apps">Apps</a> - <a href="#music">Music</a>
           </div>

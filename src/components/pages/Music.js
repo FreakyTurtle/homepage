@@ -31,7 +31,7 @@ export default class Music extends React.Component {
           },
       };
       this.state = {
-          selected: 1,
+          selected: 0,
       };
       this.songChips = this.songChips.bind(this);
     }

@@ -46,7 +46,7 @@ export default class Home extends React.Component {
           <img className="FTWelcome" src="images/FTwelcomeWHITE.png"></img>
           <hr />
           <div className="home-menu">
-            <a href="#experience">Experience</a> - <a href="#dev">Development Skills</a> - <a href="#apps">Apps</a> - <a href="#music">Music</a>
+            <a href="#experience">Experience</a> - <a href="#dev">Development</a> - <a href="#apps">Apps</a> - <a href="#music">Music</a>
           </div>
           <br/>
           <p>This site was made using <a href="https://facebook.github.io/react/" target="_blank">React.js</a>, <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a> and <a href="http://www.material-ui.com/#/" target="_blank">Material-UI</a>.</p>

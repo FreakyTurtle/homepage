@@ -3,6 +3,7 @@ import Paper from 'material-ui/Paper';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import ExperienceStepper from './ExperienceStepper';
 import SkillsChips from './SkillsChips.js';
+import OpenChips from './OpenChips.js';
 
 export default class ProfileCard extends React.Component {
     
@@ -43,6 +44,12 @@ export default class ProfileCard extends React.Component {
                     <CardText
                         children={
                             <SkillsChips />
+                        }
+                     />
+                    <CardTitle title="Open Source Projects" />
+                    <CardText
+                        children={
+                            <OpenChips />
                         }
                      />
                 </Card>

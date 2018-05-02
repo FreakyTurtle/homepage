@@ -54,6 +54,9 @@ export default class SkillsChips extends React.Component {
           {text: "redux", classes: "",
               blurb: "Commercial experience introducing redux, along with React, into the workflow of an already live app, with over 2 million active users."
           },
+          {text: "Automated Testing", classes: "",
+              blurb: "Developed automated testing suites, mostly using testcafe.  Written open source reporters to contribute to the community."
+          },
           {text: "Laravel", classes: "",
               blurb: "Self-taught on the laravel framework, and a champion of it to colleagues, it has been the basis for several personal development projects"
           },

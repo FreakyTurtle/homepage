@@ -21,7 +21,7 @@ export default class MainComponent extends React.Component{
           pages: [
               {name:'Home', href:"home"}, 
               {name:'Experience', href:'experience'}, 
-              {name:'Development Skills', href: 'dev'}, 
+              {name:'Development', href: 'dev'}, 
               {name: 'Apps', href:'apps'},
               {name: 'Music', href:'music'}
           ]

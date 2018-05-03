@@ -44,7 +44,6 @@ export default class OpenChips extends React.Component {
     };
     
     renderChip = (skill, i) => {
-        
         return (
             <Chip
               onTouchTap={() => this.handleTouchTap(i)}

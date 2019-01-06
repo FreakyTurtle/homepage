@@ -7,7 +7,7 @@ import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 
 export default class SkillsChips extends React.Component {
-    
+
     constructor(props) {
       super(props);
       this.state = {title: "", open:false, blurb: ""}
@@ -30,6 +30,9 @@ export default class SkillsChips extends React.Component {
           {text: "Bootstrap", classes: "",
               blurb: "Several years commercial experience implementing bootstrap to improve responsive design in both old and new apps and websites."
           },
+          {text: "Docker", classes: "",
+              blurb: "Commercial experience using Docker to deploy projects and services"
+          },
           {text: "JQuery", classes: "",
               blurb: "Several years commercial experience using JQuery in a wide variety of apps and websites"
           },
@@ -47,6 +50,9 @@ export default class SkillsChips extends React.Component {
           },
           {text: "Github", classes: "fa fa-github",
               blurb: "Commercial and personal experience using Github, a link to the repository for this website is in the top right of the page"
+          },
+          {text: "Jenkins", classes: "fa fa-github",
+              blurb: "Commercial experience using Jenkins for CI/CD"
           },
           {text: "PHP", classes: "",
               blurb: "Several years personal experience learning and developing with PHP, including versions up to 7.  1 year experience commercially as a freelance developer, mainly focused on bot-creation for data-scraping"
@@ -108,18 +114,18 @@ export default class SkillsChips extends React.Component {
           {text: "AGILE/SCRUM/Kanban", classes: "",
               blurb: "Experience in workplaces that use different approaches and methodoligies to achieve a good work flow."
           },
-          
+
       ]
     }
-    
+
     handleTouchTap = (i) => {
         this.setState({
-            title: this.skills[i].text, 
+            title: this.skills[i].text,
             blurb: this.skills[i].blurb,
             open: true
         });
     }
-    
+
     handleOpen = () => {
       this.setState({open: true});
     };
@@ -127,9 +133,9 @@ export default class SkillsChips extends React.Component {
     handleClose = () => {
       this.setState({open: false});
     };
-    
+
     renderChip = (skill, i) => {
-        
+
         return (
             <Chip
               onTouchTap={() => this.handleTouchTap(i)}
@@ -142,7 +148,7 @@ export default class SkillsChips extends React.Component {
             </Chip>
         );
     }
-    
+
     render() {
         const actions = [
           <FlatButton
